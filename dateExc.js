@@ -22,4 +22,9 @@ let year = verifyNum("Ingrese el año correspondiente: ", 500, 3000);
 let date = new Date(year, month - 1, day);
 let dateUser = date.getDay();
 
-alert(null);
+alert("La fecha ingresada corresponde a: " + date.toLocaleDateString("es-ES", {
+    weekday: "long",
+    month: "long",
+    year: "numeric",
+    day: "numeric"
+}));
