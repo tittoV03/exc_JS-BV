@@ -2,14 +2,19 @@
 // Ingresar una fecha mediante un prompt (en formato mes-dia-año) y luego, mostrar
 // mediante un alert, a que día de la semana corresponde.
 
-let month;
-
-while (true)
+function verifyNum(message, min, max)
 {
-    month = Number(prompt("Por favor ingrese el mes: "));
+    while (true)
+    {
+        let number = Number(prompt(message));
 
-    if (!isNaN(month) && month >= 1 && month <= 12)
-        break;
+        if (!isNaN(number) && number >= min && number <= max)
+            break;
 
-    console.log("El mes ingresado no es valido, intentelo de nuevo.")
+        console.log("El valor ingresado no es valido, intentelo de nuevo.")
+    }
 }
+
+let month = verifyNum("Por favor, ingrese el mes: ", 1, 12);
+let day = verifyNum("Indique el día del mes: ", 1, 31);
+let year = verifyNum("Ingrese el año correspondiente: ", 500, 3000);
