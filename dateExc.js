@@ -2,9 +2,18 @@
 // Ingresar una fecha mediante un prompt (en formato mes-dia-año) y luego, mostrar
 // mediante un alert, a que día de la semana corresponde.
 
-let month = Number(prompt("Por favor ingrese el mes: "));
+let month = null;
 
-while (isNaN(month) && month < 1 || month > 12)
+while (true)
 {
-    console.log("El mes ingresado no es valido, intentelo de nuevo.");
+    month = Number(prompt("Por favor ingrese el mes: "));
+
+    if (month != null || !isNaN(month) && month > 1 || month < 12)
+    {
+        break;
+    }
+    else
+    {
+        console.log("El mes ingresado no es valido, intentelo de nuevo.")
+    }
 }
