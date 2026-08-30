@@ -9,7 +9,7 @@ function verifyNum(message, min, max)
         let number = Number(prompt(message));
 
         if (!isNaN(number) && number >= min && number <= max)
-            break;
+            return number;
 
         console.log("El valor ingresado no es valido, intentelo de nuevo.")
     }
@@ -18,3 +18,8 @@ function verifyNum(message, min, max)
 let month = verifyNum("Por favor, ingrese el mes: ", 1, 12);
 let day = verifyNum("Indique el día del mes: ", 1, 31);
 let year = verifyNum("Ingrese el año correspondiente: ", 500, 3000);
+
+let date = new Date(year, month - 1, day);
+let dateUser = date.getDay();
+
+alert(null);
